@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Coze Chat Icon</title>
+  <style>
+    #chat-icon {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 50px;
+      height: 50px;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      font-size: 24px;
+    }
+  </style>
+</head>
+<body>
+  <div id="chat-icon">
+    <i class="fas fa-comment"></i>
+  </div>
+
+  <script src="https://kit.fontawesome.com/your-fontawesome-kit-id.js" crossorigin="anonymous"></script>
+  <script src="https://sf-cdn.coze.com/obj/unpkg-va/flow-platform/chat-app-sdk/0.1.0-beta.3/libs/oversea/index.js"></script>
+  <script>
+    const chatIcon = document.getElementById('chat-icon');
+    const sdk = new CozeWebSDK.WebChatClient({
+      config: {
+        bot_id: '7377378924810108935',
+      },
+      componentProps: {
+        title: 'Coze',
+      },
+    });
+
+    chatIcon.addEventListener('click', () => {
+      sdk.openChat();
+    });
+
+    sdk.onMessage((message) => {
+      // 处理接收到的消息
+    });
+  </script>
+</body>
+</html>
