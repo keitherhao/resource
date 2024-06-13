@@ -1,48 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Coze Chat Icon</title>
-  <style>
-    #chat-icon {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      width: 50px;
-      height: 50px;
-      cursor: pointer;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: #fff;
-      font-size: 24px;
+<title>Opening Notion Page...</title>
+<style>
+    body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
     }
-  </style>
+    #fullscreen {
+        background-color: black;
+        color: white;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
 </head>
 <body>
-  <div id="chat-icon">
-    <i class="fas fa-comment"></i>
-  </div>
 
-  <script src="https://kit.fontawesome.com/your-fontawesome-kit-id.js" crossorigin="anonymous"></script>
-  <script src="https://sf-cdn.coze.com/obj/unpkg-va/flow-platform/chat-app-sdk/0.1.0-beta.3/libs/oversea/index.js"></script>
-  <script>
-    const chatIcon = document.getElementById('chat-icon');
-    const sdk = new CozeWebSDK.WebChatClient({
-      config: {
-        bot_id: '7377378924810108935',
-      },
-      componentProps: {
-        title: 'Coze',
-      },
-    });
+<div id="fullscreen">
+    <h1>跳转中...</h1>
+</div>
 
-    chatIcon.addEventListener('click', () => {
-      sdk.openChat();
-    });
+<script>
+setTimeout(function(){
+    window.location.href = 'https://keitherhao.github.io';
+}, 0); // Redirect after 0 seconds
+</script>
 
-    sdk.onMessage((message) => {
-      // 处理接收到的消息
-    });
-  </script>
 </body>
 </html>
